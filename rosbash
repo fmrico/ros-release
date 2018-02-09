@@ -506,7 +506,7 @@ function _roscomplete_search_dir {
 
 function _roscomplete_exe {
     local perm i prev_arg
-    if [[ `uname` == Darwin || `uname` == Linux ]]; then
+    if [[ `uname` == Darwin || `uname -a | grep pepper` != "" ]]; then
         perm="+111"
     else
         perm="/111"

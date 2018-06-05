@@ -509,7 +509,7 @@ function _roscomplete_exe {
     if [[ `uname` == Darwin || `uname -a | grep pepper` != "" ]]; then
         perm="+111"
     else
-        perm="/111"
+        perm="+111"
     fi
     rosrun_args=("--prefix" "--debug")
 

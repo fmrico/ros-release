@@ -65,7 +65,7 @@ if [[ ! $2 == */* ]]; then
   if [[ `uname` == Darwin || `uname -a | grep pepper` != "" ]]; then
     _perm="+111"
   else
-    _perm="/111"
+    _perm="+111"
   fi
   debug "Searching for $2 with permissions $_perm"
   exepathlist="`find -L "${catkin_package_libexec_dirs[@]}" "$pkgdir" -name "$2" -type f  -perm "$_perm" ! -regex ".*$pkgdir\/build\/.*" | uniq`"
